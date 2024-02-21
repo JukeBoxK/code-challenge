@@ -5,22 +5,53 @@
 
   <!-- You may add more stuff here -->
   <link href="style.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://unpkg.com/slim-select@latest/dist/slimselect.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/milligram@1.4.1/dist/milligram.min.css">
+  <script src="https://unpkg.com/slim-select@latest/dist/slimselect.js"></script>
 </head>
 
 <body>
 
   <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
+  <form onsubmit="return !1" class="container">
     <h5>Swap</h5>
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
-
-    <label for="output-amount">Amount to receive</label>
-    <input id="output-amount" />
-
-    <button>CONFIRM SWAP</button>
+    <div class="grid">
+      <div>
+        <div class="grid">
+          <label for="input-amount">Amount to send</label>
+          <image id="input-token" src="tokens/none.svg" width="30" height="30"></image>
+        </div>
+        <input id="input-amount" />
+      </div>
+      <div>
+        <div id="dropdown-container-input">
+          <label>Pick Currency</label>
+          <select id="input-currency-dropdown">
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="grid">
+      <div>
+        <div class="grid">
+          <label for="output-amount">Amount to receive</label>
+          <img id="output-token" src="tokens/none.svg" width="30" height="30"></img>
+        </div>
+        <input id="output-amount" />
+      </div>
+      <div>
+        <div id="dropdown-container-output">
+          <label>Pick Currency</label>
+          <select id="output-currency-dropdown"></select>
+        </div>
+      </div>
+    </div>
+    <button onclick="handleClick()">CONFIRM SWAP</button>
   </form>
   <script src="script.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
 </html>

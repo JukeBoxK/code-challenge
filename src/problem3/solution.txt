@@ -1,0 +1,22 @@
+The issues are as follow:
+
+1. Undefined Types for prices and setPrices: 
+    The types for prices and setPrices should be defined to ensure type safety and clarity.
+
+To resolve: It has been defined as { [key: string]: number } for the usestate.
+
+2. Unnecessary Separation of sortedBalances and formattedBalances: 
+    Since sortedBalances is not used anywhere else other then to created formattedBalances, which is used for 
+    generating rows, there's no need to separate them.
+
+To Resolve: sortedBalnce is no merged with formattedBalances together as formattedBalances.
+
+3. Redundant Calls to getPriority: 
+    getPriority is called twice for filtering and sorting the balances
+
+To Resolve: defined a balance with priority calculated and refer to that for priority value.
+
+4. Unnecessary useMemo: 
+    Balances and prices seemd to be static and never change during the component's lifecycle
+
+To Reolve: Remove the use of useMemo.
