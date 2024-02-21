@@ -15,40 +15,51 @@
 <body>
 
   <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1" class="container">
-    <h5>Swap</h5>
-    <div class="grid">
-      <div>
-        <div class="grid">
+  <form onsubmit="return !1">
+    <table class="custom-table">
+      <tr>
+        <td colspan="2" align="center">
+          <h2 class="title">Swap Your Currency</h2>
+        </td>
+      </tr>
+      <tr>
+        <td>
           <label for="input-amount">Amount to send</label>
-          <image id="input-token" src="tokens/none.svg" width="30" height="30"></image>
-        </div>
-        <input id="input-amount" />
-      </div>
-      <div>
-        <div id="dropdown-container-input">
-          <label>Pick Currency</label>
-          <select id="input-currency-dropdown">
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="grid">
-      <div>
-        <div class="grid">
+        </td>
+        <td>
           <label for="output-amount">Amount to receive</label>
-          <img id="output-token" src="tokens/none.svg" width="30" height="30"></img>
-        </div>
-        <input id="output-amount" />
-      </div>
-      <div>
-        <div id="dropdown-container-output">
-          <label>Pick Currency</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="input-container">
+            <image id="input-token" src="tokens/none.svg" width="30" height="30">
+            <input id="input-amount" class="currency-input">
+          </div>
+        </td>
+        <td>
+          <div class="input-container">
+            <image id="output-token" src="tokens/none.svg" width="30" height="30">
+            <input id="output-amount" class="currency-input">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="input-currency-dropdown">Pick Currency</label>
+          <select id="input-currency-dropdown"></select>
+        </td>
+        <td>
+          <label for="output-currency-dropdown">Pick Currency</label>
           <select id="output-currency-dropdown"></select>
-        </div>
-      </div>
-    </div>
-    <button onclick="handleClick()">CONFIRM SWAP</button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <button onclick="handleClick()">CONFIRM SWAP</button>
+        </td>
+      </tr>
+    </table>    
   </form>
   <script src="script.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
